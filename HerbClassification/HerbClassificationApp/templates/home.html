@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-    <title>Django Tailwind</title>
+    {% block title %}<title>Home</title>{% endblock %}
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,32 +10,35 @@
 	</head>
 
 	<body class="mx-auto max-w-[1500px] m-5 min-h-screen">
-		<header class="bg-amber-300 px-25 py-5 flex justify-between space-x-10 text-2xl">
-			<div class="logo">
-				<p>MY APP LOGO</p>
-			</div>
-			<nav>
-				<ul class="flex justify-self-end-safe space-x-10">
-					<li><a class="font-semibold text-xl" href="">Page</a></li>
-					<li><a class="font-semibold text-xl" href="">Page</a></li>
-					<li><a class="font-semibold text-xl" href="">Page</a></li>
-					<li><a class="font-semibold text-xl" href="">Page</a></li>
-				</ul>
-			</nav>
-		</header>
+		
+			<header class="px-25 py-5 flex justify-between space-x-10 text-2xl">
+				<div class="logo">
+					<p>MY APP LOGO</p>
+				</div>
+				<nav>
+					<ul class="flex justify-self-end-safe space-x-10">
+						<li><a class="font-semibold text-xl" href="{% url 'home' %}">Home</a></li>
+						<li><a class="font-semibold text-xl" href="{% url 'classify' %}">Classify</a></li>
+						<li><a class="font-semibold text-xl" href="">About</a></li>
+						<li><a class="font-semibold text-xl" href="">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+			{% block content %}
+			<section class="hero mx-auto max-w-[1300px]  m-5 min-h-screen border-2 border-amber-200 p-5">
+				<h1 class="text-4xl text-amber-950">APP NAME</h1>
+				<h2 class="text-3xl text-amber-900">About THe App</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe harum iure laboriosam aspernatur veritatis id ad! Sit quis excepturi quod, nostrum minima unde repellendus asperiores facere provident iusto. Quo, quia.</p>
+			</section>
 
-		<section class="hero mx-auto max-w-[1300px]  m-5 min-h-screen bg-amber-200 p-5">
-			<h1 class="text-4xl text-amber-950">APP NAME</h1>
-			<h2 class="text-3xl text-amber-900">About THe App</h2>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe harum iure laboriosam aspernatur veritatis id ad! Sit quis excepturi quod, nostrum minima unde repellendus asperiores facere provident iusto. Quo, quia.</p>
-		</section>
+			<section class="services mx-auto max-w-[1300px]  m-5 min-h-screen border-2 border-amber-200 p-5">
+				<h2 class="text-3xl text-amber-900">About THe App</h2>
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum mollitia vero, tempora quidem, asperiores ex rerum quo deserunt aspernatur praesentium quibusdam fugit, aperiam dolore error consectetur nam at nisi? Possimus!</p>
+			</section>
+		{% endblock %}
+		
 
-		<section class="services mx-auto max-w-[1300px]  m-5 min-h-screen bg-amber-200 p-5">
-			<h2 class="text-3xl text-amber-900">About THe App</h2>
-			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum mollitia vero, tempora quidem, asperiores ex rerum quo deserunt aspernatur praesentium quibusdam fugit, aperiam dolore error consectetur nam at nisi? Possimus!</p>
-		</section>
-
-	<footer class="services mx-auto max-w-screen m-5 min-h-20 bg-amber-500 text-center p-5">
+	<footer class="services mx-auto max-w-screen m-5 min-h-20 border-2 border-amber-500 text-center p-5">
 		<p>Footer content</p>
 	</footer>
 </body>
